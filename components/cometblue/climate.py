@@ -16,7 +16,7 @@ CONF_PIN = 'pin'
 
 CometBlueClimate = cg.global_ns.class_('CometBlueClimate', climate.Climate, cg.PollingComponent)
 
-CONFIG_SCHEMA = cv.All(climate.CLIMATE_SCHEMA.extend({
+CONFIG_SCHEMA = cv.All(climate._CLIMATE_SCHEMA.extend({
     cv.GenerateID(): cv.declare_id(CometBlueClimate),
     cv.GenerateID(CONF_TIME_ID): cv.use_id(time.RealTimeClock),
     cv.Required(CONF_MAC_ADDRESS): cv.mac_address,
